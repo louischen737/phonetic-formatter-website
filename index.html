@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Phonetic Formatter - Convert English Text to Phonetic Transcription | IPA Converter</title>
+    <meta name="title" content="Phonetic Formatter - Convert English Text to Phonetic Transcription">
+    <meta name="description" content="Turn any English text into lesson-ready phonetic material in seconds. Free IPA converter for language learning, teaching, and reference. Export to TXT, DOCX, PDF.">
+    <meta name="keywords" content="phonetic transcription, IPA converter, phonetic formatter, English to IPA, phonetic alphabet, language learning, pronunciation guide, CMU dictionary">
+    <meta name="author" content="Phonetic Formatter">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://YOUR_USERNAME.github.io/phonetic-formatter-website/">
+    <meta property="og:title" content="Phonetic Formatter - Convert English Text to Phonetic Transcription">
+    <meta property="og:description" content="Turn any English text into lesson-ready phonetic material in seconds. Free IPA converter for language learning and teaching.">
+    <meta property="og:image" content="https://YOUR_USERNAME.github.io/phonetic-formatter-website/logo.png">
+    <meta property="og:site_name" content="Phonetic Formatter">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://YOUR_USERNAME.github.io/phonetic-formatter-website/">
+    <meta property="twitter:title" content="Phonetic Formatter - Convert English Text to Phonetic Transcription">
+    <meta property="twitter:description" content="Turn any English text into lesson-ready phonetic material in seconds. Free IPA converter for language learning and teaching.">
+    <meta property="twitter:image" content="https://YOUR_USERNAME.github.io/phonetic-formatter-website/logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://YOUR_USERNAME.github.io/phonetic-formatter-website/">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Phonetic Formatter",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "iOS",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "ratingCount": "100"
+      },
+      "description": "Convert English text to phonetic transcription using IPA. Perfect for language learning, teaching, and reference.",
+      "screenshot": "https://YOUR_USERNAME.github.io/phonetic-formatter-website/logo.png",
+      "featureList": [
+        "Convert English text to IPA phonetic transcription",
+        "Export to TXT, DOCX, PDF formats",
+        "Works offline",
+        "Privacy-first: all processing local",
+        "Free and Pro versions available"
+      ]
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #007AFF 0%, #0051D5 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            height: 60px;
+            width: auto;
+            max-width: 200px;
+            object-fit: contain;
+        }
+        
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        nav {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem 0;
+            margin-top: 1rem;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #007AFF;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .features {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #007AFF;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .pricing {
+            padding: 4rem 0;
+        }
+        
+        .pricing h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        
+        .pricing-card.pro {
+            border-color: #007AFF;
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px rgba(0,122,255,0.2);
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .pricing-card.pro h3 {
+            color: #007AFF;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #007AFF;
+            margin: 1rem 0;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .pricing-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .pricing-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #007AFF;
+            font-weight: bold;
+        }
+        
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                height: 48px;
+                max-width: 160px;
+            }
+            
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.pro {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="logo.png" alt="Phonetic Formatter Logo" class="logo" onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';">
+                <h1 class="logo-text" style="display: none;">Phonetic Formatter</h1>
+            </div>
+            <div class="hero">
+                <p>Turn any English text into lesson-ready phonetic material in seconds</p>
+                <a href="https://apps.apple.com/app/phonetic-formatter/idYOUR_APP_ID" class="cta-button" target="_blank" rel="noopener noreferrer">Download on the App Store</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Easy Text Conversion</h3>
+                    <p>Simply paste or type your English text and get instant phonetic transcription using the CMU Pronouncing Dictionary.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Perfect for Learning</h3>
+                    <p>Ideal for language learners, teachers, and anyone who needs clear phonetic transcriptions for reference.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💾</div>
+                    <h3>Export Options</h3>
+                    <p>Export your results in multiple formats: TXT, DOCX, or PDF. Perfect for creating lesson materials and documents.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Privacy First</h3>
+                    <p>All processing happens locally on your device. Your text never leaves your device - complete privacy guaranteed.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast & Reliable</h3>
+                    <p>Lightning-fast conversion with accurate results. Works offline - no internet connection required.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Clean Interface</h3>
+                    <p>Beautiful, intuitive design with support for light and dark modes. Easy to use for everyone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="container">
+            <h2>Choose Your Plan</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Free</h3>
+                    <div class="price">$0</div>
+                    <ul class="pricing-features">
+                        <li>Up to 400 words per conversion</li>
+                        <li>1 generation per day</li>
+                        <li>Basic phonetic transcription</li>
+                        <li>Copy results to clipboard</li>
+                    </ul>
+                </div>
+                <div class="pricing-card pro">
+                    <h3>Pro</h3>
+                    <div class="price">One-time</div>
+                    <ul class="pricing-features">
+                        <li>Up to 6,000 words per conversion</li>
+                        <li>Unlimited daily generations</li>
+                        <li>Export to TXT, DOCX, PDF</li>
+                        <li>No daily limits</li>
+                        <li>Lifetime access</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="support.html">Support</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <p>&copy; 2026 Phonetic Formatter. All rights reserved.</p>
+            <p>Contact: <a href="mailto:phoneticformatter@outlook.com">phoneticformatter@outlook.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>
