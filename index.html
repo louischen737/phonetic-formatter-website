@@ -110,6 +110,7 @@
         
         .header-content > a {
             flex-shrink: 0;
+            margin-right: 2.5rem;
         }
         
         nav {
@@ -513,19 +514,21 @@
             grid-template-columns: 200px 1fr 1fr;
             gap: 2rem;
             align-items: center;
+            justify-items: center;
         }
         
         .pricing-footer-label {
             font-size: 1.1rem;
             font-weight: 600;
             text-align: left;
+            justify-self: start;
         }
         
         .pricing-footer-price {
-            text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             gap: 0.25rem;
         }
         
@@ -548,6 +551,7 @@
         .pricing-table {
             width: 100%;
             border-collapse: collapse;
+            table-layout: fixed;
         }
         
         .pricing-table thead {
@@ -567,6 +571,12 @@
             text-align: left;
             background: rgba(255,255,255,0.1);
             width: 200px;
+            min-width: 200px;
+        }
+        
+        .pricing-table th.free-col,
+        .pricing-table th.pro-col {
+            width: auto;
         }
         
         .pricing-table th.free-col {
@@ -581,10 +591,10 @@
         
         .crown-icon {
             position: absolute;
-            top: -0.75rem;
+            top: 0.5rem;
             right: 0.5rem;
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -593,8 +603,8 @@
         }
         
         .crown-icon svg {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
         }
         
         .pricing-table tbody tr {
@@ -750,6 +760,7 @@
             
             .header-content > a {
                 order: 1;
+                margin-right: 0;
             }
             
             nav {
@@ -849,15 +860,15 @@
             }
             
             .crown-icon {
-                width: 24px;
-                height: 24px;
-                top: -0.5rem;
+                width: 22px;
+                height: 22px;
+                top: 0.25rem;
                 right: 0.25rem;
             }
             
             .crown-icon svg {
-                width: 24px;
-                height: 24px;
+                width: 22px;
+                height: 22px;
             }
             
             .pricing-table-footer {
