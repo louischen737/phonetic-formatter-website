@@ -203,8 +203,11 @@
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
             font-weight: 700;
-            line-height: 1.2;
+            line-height: 1.3;
             text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .hero h2 {
@@ -504,11 +507,13 @@
             text-align: center;
             font-size: 1.5rem;
             font-weight: 600;
+            vertical-align: top;
         }
         
         .pricing-table th:first-child {
             text-align: left;
             background: rgba(255,255,255,0.1);
+            width: 200px;
         }
         
         .pricing-table th.free-col {
@@ -520,16 +525,49 @@
             position: relative;
         }
         
-        .pricing-table th.pro-col::after {
-            content: "POPULAR";
+        .plan-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .plan-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .plan-price-note {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        
+        .crown-icon {
             position: absolute;
             top: 0.5rem;
             right: 0.5rem;
-            font-size: 0.7rem;
-            background: rgba(255,255,255,0.3);
-            padding: 0.25rem 0.75rem;
-            border-radius: 12px;
-            font-weight: 600;
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffa500 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(255, 215, 0, 0.5);
+            z-index: 2;
+        }
+        
+        .crown-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
         }
         
         .pricing-table tbody tr {
@@ -701,6 +739,12 @@
             
             .hero h1 {
                 font-size: 2.5rem;
+                max-width: 100%;
+                padding: 0 1rem;
+            }
+            
+            .hero h1 br {
+                display: block;
             }
             
             .hero h2 {
@@ -760,11 +804,32 @@
                 font-size: 1.2rem;
             }
             
-            .pricing-table th.pro-col::after {
-                font-size: 0.6rem;
-                padding: 0.2rem 0.5rem;
+            .crown-icon {
+                width: 24px;
+                height: 24px;
                 top: 0.25rem;
                 right: 0.25rem;
+            }
+            
+            .crown-icon svg {
+                width: 14px;
+                height: 14px;
+            }
+            
+            .plan-header {
+                gap: 0.25rem;
+            }
+            
+            .plan-name {
+                font-size: 1.2rem;
+            }
+            
+            .plan-price {
+                font-size: 1.5rem;
+            }
+            
+            .plan-price-note {
+                font-size: 0.75rem;
             }
             
             .pricing-table td {
@@ -825,7 +890,7 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Instantly Convert English Text to Phonetic Transcription</h1>
+            <h1>Instantly Convert English Text to<br>Phonetic Transcription</h1>
             <h2>Perfect for teachers, students, and language enthusiasts.</h2>
             <div class="hero-buttons">
                 <a href="https://apps.apple.com/app/phonetic-formatter/idYOUR_APP_ID" class="app-store-badge" target="_blank" rel="noopener noreferrer">
@@ -895,9 +960,25 @@
                 <table class="pricing-table">
                     <thead>
                         <tr>
-                            <th>Feature</th>
-                            <th class="free-col">Free</th>
-                            <th class="pro-col">Pro</th>
+                            <th>Plan Details</th>
+                            <th class="free-col">
+                                <div class="plan-header">
+                                    <div class="plan-name">Free</div>
+                                    <div class="plan-price" style="font-size: 1.5rem;">Free</div>
+                                </div>
+                            </th>
+                            <th class="pro-col">
+                                <div class="crown-icon">
+                                    <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5z"/>
+                                    </svg>
+                                </div>
+                                <div class="plan-header">
+                                    <div class="plan-name">Pro</div>
+                                    <div class="plan-price">$19.99</div>
+                                    <div class="plan-price-note">one-time purchase</div>
+                                </div>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -925,11 +1006,6 @@
                             <td>Lifetime Access</td>
                             <td class="free-col"><span class="feature-cross">✗</span></td>
                             <td class="pro-col"><span class="feature-check">✓</span></td>
-                        </tr>
-                        <tr>
-                            <td>Price</td>
-                            <td class="free-col">Free</td>
-                            <td class="pro-col">$19.99 one-time purchase</td>
                         </tr>
                     </tbody>
                 </table>
