@@ -33,7 +33,7 @@ This directory contains the website files for Phonetic Formatter, designed to be
 ### Step 4: Access Your Website
 
 Your website will be available at:
-- `https://YOUR_USERNAME.github.io/phonetic-formatter-website/`
+- `https://louischen737.github.io/phonetic-formatter-website/`
 
 Or if you use a custom domain:
 - `https://yourdomain.com`
@@ -52,14 +52,9 @@ See `LOGO_REQUIREMENTS.md` for detailed logo specifications.
 
 ### Update URLs
 
-Before deploying, update these URLs in all HTML files:
-1. Replace `YOUR_USERNAME` with your GitHub username in:
-   - Open Graph URLs
-   - Twitter Card URLs
-   - Canonical URLs
-   - Structured Data image URLs
+✅ **GitHub Username**: All URLs have been automatically updated to use `louischen737`. No manual update needed!
 
-2. Update App Store link in `index.html`:
+2. Update App Store link in `index.html` (required):
 ```html
 <a href="https://apps.apple.com/app/phonetic-formatter/idYOUR_APP_ID" class="cta-button">
 ```
@@ -92,10 +87,10 @@ You can test the website locally before deploying:
 
 Once deployed, use these URLs in App Store Connect:
 
-- **Marketing URL**: `https://YOUR_USERNAME.github.io/phonetic-formatter-website/`
-- **Support URL**: `https://YOUR_USERNAME.github.io/phonetic-formatter-website/support.html`
-- **Privacy Policy URL**: `https://YOUR_USERNAME.github.io/phonetic-formatter-website/privacy.html`
-- **Terms of Service URL**: `https://YOUR_USERNAME.github.io/phonetic-formatter-website/terms.html`
+- **Marketing URL**: `https://louischen737.github.io/phonetic-formatter-website/`
+- **Support URL**: `https://louischen737.github.io/phonetic-formatter-website/support.html`
+- **Privacy Policy URL**: `https://louischen737.github.io/phonetic-formatter-website/privacy.html`
+- **Terms of Service URL**: `https://louischen737.github.io/phonetic-formatter-website/terms.html`
 
 ## Notes
 
