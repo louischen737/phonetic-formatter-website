@@ -530,6 +530,8 @@
             align-items: center;
             justify-content: center;
             gap: 0.25rem;
+            width: 100%;
+            text-align: center;
         }
         
         .pricing-footer-price-value {
@@ -585,21 +587,21 @@
         
         .pricing-table th.pro-col {
             background: rgba(255,255,255,0.1);
-            position: relative;
             font-size: 1.5rem;
-        }
-        
-        .crown-icon {
-            position: absolute;
-            top: 0.5rem;
-            right: 0.5rem;
-            width: 28px;
-            height: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
-            filter: drop-shadow(0 3px 10px rgba(255, 215, 0, 0.6));
-            z-index: 2;
+        }
+        
+        .crown-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+            filter: drop-shadow(0 2px 8px rgba(255, 215, 0, 0.6));
         }
         
         .crown-icon svg {
@@ -860,15 +862,18 @@
             }
             
             .crown-icon {
-                width: 22px;
-                height: 22px;
-                top: 0.25rem;
-                right: 0.25rem;
+                width: 20px;
+                height: 20px;
+                margin-right: 0.4rem;
             }
             
             .crown-icon svg {
-                width: 22px;
-                height: 22px;
+                width: 20px;
+                height: 20px;
+            }
+            
+            .pricing-table th.pro-col {
+                flex-direction: row;
             }
             
             .pricing-table-footer {
@@ -1021,7 +1026,6 @@
                             <th>Plan Details</th>
                             <th class="free-col">Free</th>
                             <th class="pro-col">
-                                Pro
                                 <div class="crown-icon">
                                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                         <defs>
@@ -1034,6 +1038,7 @@
                                         <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5z" fill="url(#crown-gradient)"/>
                                     </svg>
                                 </div>
+                                Pro
                             </th>
                         </tr>
                     </thead>
