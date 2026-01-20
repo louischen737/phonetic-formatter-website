@@ -157,7 +157,7 @@
             list-style: none;
             display: flex;
             flex-wrap: wrap;
-            gap: 2rem;
+            gap: 2.5rem;
             margin: 0;
         }
         
@@ -175,7 +175,7 @@
         .hero {
             position: relative;
             text-align: center;
-            padding: 6rem 0 8rem;
+            padding: 5rem 0 4rem;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #007AFF 100%);
             color: white;
             overflow: hidden;
@@ -220,7 +220,7 @@
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
         }
         
         .btn-primary {
@@ -266,7 +266,7 @@
         
         .hero-image {
             max-width: 100%;
-            margin-top: 3rem;
+            margin-top: 2rem;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             background: white;
@@ -326,7 +326,7 @@
         }
         
         .features {
-            padding: 6rem 0;
+            padding: 4rem 0;
             background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
         }
         
@@ -369,6 +369,7 @@
             flex-direction: column;
             align-items: center;
             position: relative;
+            height: 100%;
         }
         
         .feature-card:hover {
@@ -417,34 +418,54 @@
         }
         
         .feature-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            display: block;
-            text-align: center;
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            flex-shrink: 0;
+        }
+        
+        .feature-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
         }
         
         .feature-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             margin-bottom: 1rem;
             color: #333;
             font-weight: 600;
             text-align: center;
             background: #f5f5f5;
-            padding: 0.75rem 1.25rem;
+            padding: 1rem 1.25rem;
             border-radius: 8px;
             width: 100%;
             margin-top: 0.5rem;
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.4;
+            word-break: break-word;
         }
         
         .feature-card p {
             color: #666;
-            line-height: 1.8;
+            line-height: 1.7;
             text-align: center;
             font-size: 1rem;
+            min-height: 52px;
+            margin-bottom: 0;
+            padding: 0.5rem 0;
         }
         
         .pricing {
-            padding: 6rem 0;
+            padding: 4rem 0;
             background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
         }
         
@@ -661,11 +682,19 @@
             }
             
             nav ul {
-                gap: 1rem;
+                gap: 1.5rem;
             }
             
             .hero {
-                padding: 4rem 0 6rem;
+                padding: 3rem 0 3rem;
+            }
+            
+            .hero-buttons {
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero-image {
+                margin-top: 1.5rem;
             }
             
             .hero h1 {
@@ -678,12 +707,13 @@
             
             .hero-buttons {
                 flex-direction: column;
-                align-items: stretch;
+                align-items: center;
+                gap: 1rem;
             }
             
-            .btn-primary,
             .btn-secondary {
                 width: 100%;
+                max-width: 300px;
                 justify-content: center;
             }
             
@@ -703,6 +733,18 @@
             .feature-card {
                 max-width: 400px;
                 margin: 0 auto;
+                height: auto;
+            }
+            
+            .feature-card h3 {
+                min-height: auto;
+                font-size: 1.25rem;
+                padding: 0.875rem 1rem;
+            }
+            
+            .feature-card p {
+                min-height: auto;
+                font-size: 0.95rem;
             }
             
             .pricing-table-container {
@@ -790,11 +832,8 @@
             <h1>Instantly Convert English Text to Phonetic Transcription</h1>
             <h2>Perfect for teachers, students, and language enthusiasts.</h2>
             <div class="hero-buttons">
-                <a href="https://apps.apple.com/app/phonetic-formatter/idYOUR_APP_ID" class="btn-primary" target="_blank" rel="noopener noreferrer">
-                    Get Phonetic Formatter
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M11 3L10 4l6 6-6 6 1 1 7-7-7-7z"/>
-                    </svg>
+                <a href="https://apps.apple.com/app/phonetic-formatter/idYOUR_APP_ID" class="app-store-badge" target="_blank" rel="noopener noreferrer">
+                    <img src="app-store-badge.svg" alt="Download on the App Store" />
                 </a>
                 <a href="#features" class="btn-secondary">
                     Learn More
@@ -820,19 +859,36 @@
             <p>Everything you need to create professional phonetic transcriptions</p>
             <div class="feature-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                    </div>
                     <h3>Instant Phonetic Transcription</h3>
                     <p>Convert any English text into clear phonetic transcription in seconds.</p>
                     <div class="feature-detail">Powered by CMU Pronouncing Dictionary. Supports up to 6,000 words per conversion for Pro users. All processing happens locally on your device for complete privacy.</div>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">💾</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </div>
                     <h3>Export Your Work</h3>
                     <p>Save results as TXT, DOCX, or PDF (Pro users only).</p>
                     <div class="feature-detail">Export your phonetic transcriptions in multiple formats. Perfect for creating lesson plans, study materials, and reference documents. Available exclusively for Pro users.</div>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📚</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                            <line x1="8" y1="7" x2="18" y2="7"/>
+                            <line x1="8" y1="12" x2="18" y2="12"/>
+                        </svg>
+                    </div>
                     <h3>Perfect for Teachers & Learners</h3>
                     <p>Batch process text, copy results, and prepare teaching materials effortlessly.</p>
                     <div class="feature-detail">Ideal for language teachers creating pronunciation guides, students studying phonetics, and language enthusiasts. Process multiple texts quickly and efficiently.</div>
@@ -882,7 +938,7 @@
                         <tr>
                             <td>Price</td>
                             <td class="free-col">Free</td>
-                            <td class="pro-col">$X one-time purchase</td>
+                            <td class="pro-col">$19.99 one-time purchase</td>
                         </tr>
                     </tbody>
                 </table>
