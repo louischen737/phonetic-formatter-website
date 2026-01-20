@@ -65,6 +65,32 @@
             flex-wrap: wrap;
         }
         
+        .header-cta {
+            display: none;
+        }
+        
+        @media (min-width: 769px) {
+            .header-cta {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.6rem 1.5rem;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 0.95rem;
+                border-radius: 50px;
+                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+            
+            .header-cta:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            }
+        }
+        
         .logo {
             height: 50px;
             width: auto;
@@ -171,6 +197,15 @@
         }
         
         @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul {
+                gap: 1.5rem;
+            }
+            
             .content {
                 padding: 2rem 1.5rem;
             }
@@ -195,6 +230,12 @@
                         <li><a href="terms.html">Terms</a></li>
                     </ul>
                 </nav>
+                <a href="https://apps.apple.com/app/phonetic-formatter/idYOUR_APP_ID" class="header-cta" target="_blank" rel="noopener noreferrer">
+                    Get App
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M11 3L10 4l6 6-6 6 1 1 7-7-7-7z"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </header>

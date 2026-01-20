@@ -330,6 +330,10 @@
             background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
         }
         
+        .features .container {
+            max-width: 1400px;
+        }
+        
         .features h2 {
             text-align: center;
             font-size: 2.75rem;
@@ -351,11 +355,9 @@
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
+            gap: 3rem;
             margin-top: 3rem;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
+            width: 100%;
         }
         
         .feature-card {
@@ -432,25 +434,25 @@
         .feature-icon svg {
             width: 32px;
             height: 32px;
-            fill: white;
         }
         
         .feature-card h3 {
-            font-size: 1.35rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
             color: #333;
             font-weight: 600;
             text-align: center;
             background: #f5f5f5;
-            padding: 1rem 1.25rem;
+            padding: 1rem 1rem;
             border-radius: 8px;
             width: 100%;
             margin-top: 0.5rem;
-            min-height: 72px;
+            min-height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
-            line-height: 1.4;
+            line-height: 1.3;
+            hyphens: auto;
             word-break: break-word;
         }
         
@@ -731,15 +733,16 @@
             }
             
             .feature-card {
-                max-width: 400px;
+                max-width: 500px;
                 margin: 0 auto;
                 height: auto;
             }
             
             .feature-card h3 {
                 min-height: auto;
-                font-size: 1.25rem;
+                font-size: 1.2rem;
                 padding: 0.875rem 1rem;
+                line-height: 1.4;
             }
             
             .feature-card p {
@@ -771,13 +774,6 @@
             
             .pricing-table td:first-child {
                 font-size: 0.85rem;
-            }
-            
-            .btn-upgrade {
-                padding: 1rem 2rem;
-                font-size: 1.1rem;
-                width: 100%;
-                max-width: 300px;
             }
             
             footer {
@@ -845,11 +841,6 @@
             <div class="hero-image">
                 <img src="app-screenshot.png" alt="Phonetic Formatter App Interface" onerror="this.style.display='none'; this.parentElement.style.display='none';">
             </div>
-            <div class="scroll-indicator">
-                <svg viewBox="0 0 24 24">
-                    <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
-                </svg>
-            </div>
         </div>
     </section>
 
@@ -860,8 +851,8 @@
             <div class="feature-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="none"/>
                         </svg>
                     </div>
                     <h3>Instant Phonetic Transcription</h3>
@@ -870,10 +861,10 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                            <polyline points="7 10 12 15 17 10"/>
-                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" fill="none"/>
+                            <polyline points="7 10 12 15 17 10" fill="none"/>
+                            <line x1="12" y1="15" x2="12" y2="3" fill="none"/>
                         </svg>
                     </div>
                     <h3>Export Your Work</h3>
@@ -882,11 +873,11 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-                            <line x1="8" y1="7" x2="18" y2="7"/>
-                            <line x1="8" y1="12" x2="18" y2="12"/>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" fill="none"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" fill="none"/>
+                            <line x1="8" y1="7" x2="18" y2="7" fill="none"/>
+                            <line x1="8" y1="12" x2="18" y2="12" fill="none"/>
                         </svg>
                     </div>
                     <h3>Perfect for Teachers & Learners</h3>
@@ -944,11 +935,8 @@
                 </table>
             </div>
             <div class="pricing-cta">
-                <a href="https://apps.apple.com/app/phonetic-formatter/idYOUR_APP_ID" class="btn-upgrade" target="_blank" rel="noopener noreferrer">
-                    Upgrade to Pro
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
-                    </svg>
+                <a href="https://apps.apple.com/app/phonetic-formatter/idYOUR_APP_ID" class="app-store-badge" target="_blank" rel="noopener noreferrer">
+                    <img src="app-store-badge.svg" alt="Download on the App Store" />
                 </a>
             </div>
         </div>

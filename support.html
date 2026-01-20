@@ -69,6 +69,32 @@
             flex-wrap: wrap;
         }
         
+        .header-cta {
+            display: none;
+        }
+        
+        @media (min-width: 769px) {
+            .header-cta {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.6rem 1.5rem;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 0.95rem;
+                border-radius: 50px;
+                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+            
+            .header-cta:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            }
+        }
+        
         .logo {
             height: 50px;
             width: auto;
@@ -85,7 +111,7 @@
             list-style: none;
             display: flex;
             flex-wrap: wrap;
-            gap: 2rem;
+            gap: 2.5rem;
             margin: 0;
         }
         
@@ -116,6 +142,7 @@
         
         .hero-section .subtitle {
             font-size: 1.2rem;
+            color: white;
             opacity: 0.95;
             margin: 0;
         }
@@ -278,7 +305,7 @@
         .contact-button {
             display: inline-block;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            color: white !important;
             text-decoration: none;
             font-weight: 600;
             padding: 1rem 2rem;
@@ -286,6 +313,13 @@
             margin-top: 1rem;
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .contact-button:link,
+        .contact-button:visited,
+        .contact-button:hover,
+        .contact-button:active {
+            color: white !important;
         }
         
         .contact-button:hover {
@@ -328,6 +362,15 @@
         }
         
         @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul {
+                gap: 1.5rem;
+            }
+            
             .hero-section {
                 padding: 2rem 0;
             }
@@ -392,15 +435,22 @@
         <div class="container">
             <div class="header-content">
                 <a href="index.html"><img src="logo.png" alt="Phonetic Formatter Logo" class="logo" onerror="this.style.display='none';"></a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                    </ul>
+                </nav>
+                <a href="https://apps.apple.com/app/phonetic-formatter/idYOUR_APP_ID" class="header-cta" target="_blank" rel="noopener noreferrer">
+                    Get App
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M11 3L10 4l6 6-6 6 1 1 7-7-7-7z"/>
+                    </svg>
+                </a>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="support.html">Support</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
 
@@ -435,17 +485,17 @@
                 <li>The results will appear below, showing the original text and phonetic transcription line by line</li>
                 <li>Use the "Copy" button to copy the results to your clipboard</li>
             </ol>
-            <p><strong>Note:</strong> Free users can convert up to 400 words per conversion and have 1 generation per day. <span class="pro-badge">★ Pro Feature</span> Pro users have unlimited daily generations and can convert up to 6,000 words per conversion.</p>
+            <p><strong>Note:</strong> Free users can convert up to 400 words per conversion and have 1 generation per day. Pro users have unlimited daily generations and can convert up to 6,000 words per conversion.</p>
             
             </section>
             
             <section id="exporting" class="section">
-            <h2>Exporting Results <span class="pro-badge">★ Pro Feature</span></h2>
+            <h2>Exporting Results</h2>
             <p>Pro users can export their results in multiple formats:</p>
             <ul>
-                <li><strong class="pro-feature">TXT:</strong> Plain text format, perfect for simple documents</li>
-                <li><strong class="pro-feature">DOCX:</strong> Microsoft Word format, ideal for lesson plans and documents</li>
-                <li><strong class="pro-feature">PDF:</strong> Portable document format, great for sharing and printing</li>
+                <li><strong>TXT:</strong> Plain text format, perfect for simple documents</li>
+                <li><strong>DOCX:</strong> Microsoft Word format, ideal for lesson plans and documents</li>
+                <li><strong>PDF:</strong> Portable document format, great for sharing and printing</li>
             </ul>
             <p>To export, tap the "Export" button and choose your preferred format from the share sheet.</p>
             <div class="format-note">
@@ -475,7 +525,7 @@
             <div class="faq-answer">Phonetic Formatter uses the CMU Pronouncing Dictionary, which is bundled with the app. This ensures accurate phonetic transcriptions and offline functionality.</div>
             
             <h3 onclick="toggleFAQ(this)">Can I change between British and American pronunciation?<span class="toggle-icon">▼</span></h3>
-            <div class="faq-answer">Currently, the app uses the CMU Pronouncing Dictionary which primarily reflects American English pronunciation. The MVP version does not support switching between British and American pronunciation variants. This feature may be considered for future updates.</div>
+            <div class="faq-answer">Currently, the app uses the CMU Pronouncing Dictionary which primarily reflects American English pronunciation. The current version does not support switching between British and American pronunciation variants. This feature may be considered for future updates.</div>
             
             <h3 onclick="toggleFAQ(this)">Can I use this for commercial purposes?<span class="toggle-icon">▼</span></h3>
             <div class="faq-answer">Yes, you can use the app and its output for commercial purposes. However, please review our <a href="terms.html">Terms of Service</a> for complete details.</div>
@@ -494,7 +544,7 @@
                 </ul>
             </div>
             
-            <h3 onclick="toggleFAQ(this)">Export isn't working <span class="pro-badge">★ Pro Feature</span><span class="toggle-icon">▼</span></h3>
+            <h3 onclick="toggleFAQ(this)">Export isn't working<span class="toggle-icon">▼</span></h3>
             <div class="faq-answer">
                 <ul>
                     <li>Export is a Pro feature - make sure you have an active Pro license</li>
