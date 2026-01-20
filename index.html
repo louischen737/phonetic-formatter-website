@@ -105,7 +105,20 @@
             align-items: center;
             justify-content: space-between;
             gap: 1rem;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+        }
+        
+        .header-content > a {
+            flex-shrink: 0;
+        }
+        
+        nav {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .header-cta {
+            flex-shrink: 0;
         }
         
         .header-cta {
@@ -156,7 +169,7 @@
         nav ul {
             list-style: none;
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             gap: 2.5rem;
             margin: 0;
         }
@@ -492,6 +505,46 @@
             border: 1px solid rgba(102, 126, 234, 0.1);
         }
         
+        .pricing-table-footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            display: grid;
+            grid-template-columns: 200px 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .pricing-footer-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+        }
+        
+        .pricing-footer-price {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .pricing-footer-price-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .pricing-footer-price-note {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        
+        .pricing-footer-price.pro-price {
+            position: relative;
+        }
+        
         .pricing-table {
             width: 100%;
             border-collapse: collapse;
@@ -523,51 +576,25 @@
         .pricing-table th.pro-col {
             background: rgba(255,255,255,0.1);
             position: relative;
-        }
-        
-        .plan-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .plan-name {
             font-size: 1.5rem;
-            font-weight: 600;
-        }
-        
-        .plan-price {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-        }
-        
-        .plan-price-note {
-            font-size: 0.85rem;
-            opacity: 0.9;
-            font-weight: 400;
         }
         
         .crown-icon {
             position: absolute;
-            top: 0.5rem;
+            top: -0.75rem;
             right: 0.5rem;
-            width: 28px;
-            height: 28px;
-            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffa500 100%);
-            border-radius: 50%;
+            width: 32px;
+            height: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 2px 8px rgba(255, 215, 0, 0.5);
+            filter: drop-shadow(0 3px 10px rgba(255, 215, 0, 0.6));
             z-index: 2;
         }
         
         .crown-icon svg {
-            width: 16px;
-            height: 16px;
-            fill: white;
+            width: 32px;
+            height: 32px;
         }
         
         .pricing-table tbody tr {
@@ -717,12 +744,29 @@
             }
             
             .header-content {
-                flex-direction: column;
-                align-items: center;
+                flex-wrap: wrap;
+                gap: 0.75rem;
+            }
+            
+            .header-content > a {
+                order: 1;
+            }
+            
+            nav {
+                order: 3;
+                width: 100%;
+                flex: 1 1 100%;
             }
             
             nav ul {
-                gap: 1.5rem;
+                gap: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .header-cta {
+                order: 2;
+                margin-left: auto;
             }
             
             .hero {
@@ -807,29 +851,32 @@
             .crown-icon {
                 width: 24px;
                 height: 24px;
-                top: 0.25rem;
+                top: -0.5rem;
                 right: 0.25rem;
             }
             
             .crown-icon svg {
-                width: 14px;
-                height: 14px;
+                width: 24px;
+                height: 24px;
             }
             
-            .plan-header {
-                gap: 0.25rem;
+            .pricing-table-footer {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 1.5rem 1rem;
             }
             
-            .plan-name {
-                font-size: 1.2rem;
+            .pricing-footer-label {
+                text-align: center;
+                font-size: 1rem;
             }
             
-            .plan-price {
+            .pricing-footer-price-value {
                 font-size: 1.5rem;
             }
             
-            .plan-price-note {
-                font-size: 0.75rem;
+            .pricing-footer-price-note {
+                font-size: 0.8rem;
             }
             
             .pricing-table td {
@@ -867,8 +914,8 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <img src="logo.png" alt="Phonetic Formatter Logo" class="logo" onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';">
-                <h1 class="logo-text" style="display: none;">Phonetic Formatter</h1>
+                <a href="index.html"><img src="logo.png" alt="Phonetic Formatter Logo" class="logo" onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';"></a>
+                <h1 class="logo-text" style="display: none;"><a href="index.html">Phonetic Formatter</a></h1>
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
@@ -961,22 +1008,20 @@
                     <thead>
                         <tr>
                             <th>Plan Details</th>
-                            <th class="free-col">
-                                <div class="plan-header">
-                                    <div class="plan-name">Free</div>
-                                    <div class="plan-price" style="font-size: 1.5rem;">Free</div>
-                                </div>
-                            </th>
+                            <th class="free-col">Free</th>
                             <th class="pro-col">
+                                Pro
                                 <div class="crown-icon">
-                                    <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5z"/>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <linearGradient id="crown-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+                                                <stop offset="50%" style="stop-color:#ffed4e;stop-opacity:1" />
+                                                <stop offset="100%" style="stop-color:#ffa500;stop-opacity:1" />
+                                            </linearGradient>
+                                        </defs>
+                                        <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5z" fill="url(#crown-gradient)"/>
                                     </svg>
-                                </div>
-                                <div class="plan-header">
-                                    <div class="plan-name">Pro</div>
-                                    <div class="plan-price">$19.99</div>
-                                    <div class="plan-price-note">one-time purchase</div>
                                 </div>
                             </th>
                         </tr>
@@ -1009,6 +1054,16 @@
                         </tr>
                     </tbody>
                 </table>
+                <div class="pricing-table-footer">
+                    <div class="pricing-footer-label">Price</div>
+                    <div class="pricing-footer-price">
+                        <div class="pricing-footer-price-value">Free</div>
+                    </div>
+                    <div class="pricing-footer-price pro-price">
+                        <div class="pricing-footer-price-value">$19.99</div>
+                        <div class="pricing-footer-price-note">one-time purchase</div>
+                    </div>
+                </div>
             </div>
             <div class="pricing-cta">
                 <a href="https://apps.apple.com/app/phonetic-formatter/idYOUR_APP_ID" class="app-store-badge" target="_blank" rel="noopener noreferrer">
