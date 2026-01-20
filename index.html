@@ -854,54 +854,85 @@
             .pricing-table-container {
                 margin: 2rem 1rem;
                 border-radius: 16px;
+                overflow-x: auto;
+            }
+            
+            .pricing-table {
+                min-width: 600px;
             }
             
             .pricing-table th {
+                padding: 1rem 0.5rem;
+                font-size: 1.1rem;
+            }
+            
+            .pricing-table th:first-child {
+                width: 140px;
+                min-width: 140px;
                 padding: 1rem 0.75rem;
-                font-size: 1.2rem;
+            }
+            
+            .pricing-table th.free-col,
+            .pricing-table th.pro-col {
+                width: auto;
+                min-width: 100px;
             }
             
             .crown-icon {
-                width: 20px;
-                height: 20px;
-                margin-right: 0.4rem;
+                width: 18px;
+                height: 18px;
+                margin-right: 0.3rem;
             }
             
             .crown-icon svg {
-                width: 20px;
-                height: 20px;
+                width: 18px;
+                height: 18px;
             }
             
             .pricing-table th.pro-col {
                 flex-direction: row;
+                font-size: 1.1rem;
             }
             
             .pricing-table-footer {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-                padding: 1.5rem 1rem;
+                display: grid;
+                grid-template-columns: 140px 1fr 1fr;
+                gap: 0.5rem;
+                padding: 1.25rem 1rem;
+                min-width: 600px;
             }
             
             .pricing-footer-label {
-                text-align: center;
-                font-size: 1rem;
+                text-align: left;
+                font-size: 0.95rem;
+                padding: 0.5rem 0;
+            }
+            
+            .pricing-footer-price {
+                padding: 0.5rem 0;
             }
             
             .pricing-footer-price-value {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
             
             .pricing-footer-price-note {
-                font-size: 0.8rem;
+                font-size: 0.75rem;
             }
             
             .pricing-table td {
-                padding: 1rem 0.75rem;
+                padding: 1rem 0.5rem;
                 font-size: 0.9rem;
             }
             
             .pricing-table td:first-child {
                 font-size: 0.85rem;
+                padding: 1rem 0.75rem;
+            }
+            
+            .pricing-table td.free-col,
+            .pricing-table td.pro-col {
+                white-space: nowrap;
             }
             
             footer {
