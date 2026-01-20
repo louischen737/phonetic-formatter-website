@@ -156,22 +156,22 @@
             opacity: 0.95;
         }
         
-        .cta-button {
+        .app-store-badge {
             display: inline-block;
-            background: white;
-            color: #007AFF;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            height: 60px;
+            width: auto;
+            transition: transform 0.2s, opacity 0.2s;
         }
         
-        .cta-button:hover {
+        .app-store-badge:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            opacity: 0.9;
+        }
+        
+        .app-store-badge img {
+            height: 100%;
+            width: auto;
+            display: block;
         }
         
         .features {
@@ -331,6 +331,10 @@
                 font-size: 1.1rem;
             }
             
+            .app-store-badge {
+                height: 50px;
+            }
+            
             .feature-grid {
                 grid-template-columns: 1fr;
             }
@@ -354,7 +358,9 @@
             </div>
             <div class="hero">
                 <p>Turn any English text into lesson-ready phonetic material in seconds</p>
-                <a href="https://apps.apple.com/app/phonetic-formatter/idYOUR_APP_ID" class="cta-button" target="_blank" rel="noopener noreferrer">Download on the App Store</a>
+                <a href="https://apps.apple.com/app/phonetic-formatter/idYOUR_APP_ID" class="app-store-badge" target="_blank" rel="noopener noreferrer">
+                    <img src="app-store-badge.svg" alt="Download on the App Store" />
+                </a>
             </div>
             <nav>
                 <ul>
